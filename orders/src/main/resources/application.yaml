@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: orders
+
+info:
+  app:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+
+management:
+  info:
+    env:
+      enabled: true
+  server:
+    port: 8081
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+      show-components: always
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
